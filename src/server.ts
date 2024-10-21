@@ -1,6 +1,6 @@
-import fastify, { FastifyInstance } from "fastify";
-import { bookRoutes } from "./routes/book.route";
+import { app } from "./app";
 import mongoose from "mongoose";
+
 
 mongoose.connect('mongodb://localhost:27017/27017').then(() => {
     console.log('MongoDB conectado');
@@ -8,14 +8,6 @@ mongoose.connect('mongodb://localhost:27017/27017').then(() => {
     console.error(error);
     process.exit(1);
 })
-
-const app: FastifyInstance = fastify({ logger: true });
-
-app.register(
-    bookRoutes, {
-        prefix: '/books',
-    }
-)
 
 app.listen({
     port: 3000,

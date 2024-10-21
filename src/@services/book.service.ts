@@ -1,6 +1,3 @@
-// src/services/bookService.ts
-
-
 import { BookInterface } from '../interface/book.interface';
 import { BookDto } from '../@controllers/book/dto/book.dto';
 import { BookModel } from '../schema/book.shema'
